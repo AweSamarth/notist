@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,7 +14,19 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors:{
+        pageBgColor:"#070A13",
+        navbarBgColor:"#213568"
+  
+      },
+
+      fontFamily:{
+        inter:["var(--font-inter)", ...fontFamily.sans],
+        poppins: ["var(--font-poppins)", ...fontFamily.sans] 
+      }
+    
     },
+
   },
   plugins: [],
 }
