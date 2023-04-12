@@ -22,7 +22,8 @@ module.exports = {
 
       fontFamily:{
         inter:["var(--font-inter)", ...fontFamily.sans],
-        poppins: ["var(--font-poppins)", ...fontFamily.sans] 
+        poppins: ["var(--font-poppins)", ...fontFamily.sans],
+        manrope: ["var(--font-manrope)", ...fontFamily.sans], 
       }
     
     },
