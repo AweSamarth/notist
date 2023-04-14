@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, MotionValue, useMotionValue, useScroll, useTransform } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,12 +8,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Hero() {
 
-
-
-
   return (
-    <main className="h-screen  border-red-500 w-full overflow-clip">
+    <main className="h-screen border-2 relative border-red-500 w-full">
       <motion.div
+        className="border-2 border-white -left-48 bottom-12 absolute rounded-full h-[253px] w-[253px] bg-[#1B2B54] "
         animate={{ y: [0, -25, 0], x:[0,5,0] }}
         initial={true}
         transition={{
@@ -21,9 +19,9 @@ export default function Hero() {
           ease: "easeInOut",
           repeat: Infinity,
         }}
-        className="border- border-white -left-36 bottom-12 absolute rounded-full h-[253px] w-[253px] bg-[#1B2B54] "
       ></motion.div>
       <motion.div
+        className=" overflow-x-hidden border-white  -right-24 top-28  absolute rounded-full h-[132px] w-[132px] bg-[#303C5A]"
         animate={{ y: [0, 25, 0], x:[0,-5,0] }}
         initial={true}
         transition={{
@@ -31,7 +29,6 @@ export default function Hero() {
           ease: "easeInOut",
           repeat: Infinity,
         }}
-        className=" overflow-x-hidden border-white  -right-16 top-28  absolute rounded-full h-[132px] w-[132px] bg-[#303C5A]"
       ></motion.div>
 
       <div className=" h-[calc(100vh)] flex flex-col justify-between  overflow-hidden">
@@ -41,14 +38,17 @@ export default function Hero() {
 
 
 
-        <div className=" border-red-500 text-center flex flex-col gap-3 mt-8 items-center ">
+        <motion.div 
+        className=" border-red-500 text-center flex flex-col gap-3 mt-16 items-center ">
+        
+        
           <div className="text-[4.2rem] font-manrope font-light h-max     w-max text-transparent 
           bg-clip-text bg-gradient-to-br from-[#2E5CD0] to-[#384564]">
             <span className="font-semibold bg-[#2E5CD0] text-transparent bg-clip-text">10x</span> your learning speed
           </div>
           <div className=" text-[#B1B6E1] font-inter text-3xl font-light">why watch in 2x when you can learn in 10x?</div>
           
-        </div>
+        </motion.div>
 
 
 
