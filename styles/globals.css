@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+
+#progress {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  transform: rotate(-90deg);
+}
+
+circle {
+  stroke-width: 15%;
+  fill: none;
+}
+
+.bg {
+  stroke: #fafafa;
+  opacity: 0.3;
+}
+
+#progress .indicator {
+  stroke: #fafafa;
+}
+
+

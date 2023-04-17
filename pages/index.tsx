@@ -1,15 +1,15 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Explainer from './components/Explainer'
+import Hero from './components/Hero'
+import Navbar from './components/Navbar'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center border-2 border-black justify-between p-24">
-      
-      
-      Something that may or may not be going on 
-      
+    <main className="relative flex flex-col items-center  px-8  min-h-[300vh] overflow-hidden max-w-screen border-2 border-white">
+      <Navbar />
+      <Hero />
+      <Explainer />
       
       
       </main>
