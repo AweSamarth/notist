@@ -7,8 +7,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Navbar() {
   const {scrollY} = useScroll();
-  const input = [0, 200];
-  const output = [0, 0.9];
   const opacity = useTransform(scrollY, [0,200], [1, 0.95]);
   const background = useTransform(scrollY, [0, 250], ['#213568', '#0d1325']);
 
