@@ -24,7 +24,7 @@ export default function Testing() {
     
   return (
     <motion.main
-    className="scroll-smooth flex select-none flex-col items-center border-2 border-none min-h-[200vh] bg-gradient-to-bl from-orange-900 to-orange-300 text-white"
+    className="flex select-none flex-col items-center border-2 border-none min-h-[200vh] bg-gradient-to-bl from-orange-900 to-orange-300 text-white"
     transition={{ease:"easeInOut"}}
     >
       <div className='h-screen  flex flex-col justify-end ' >

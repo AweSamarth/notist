@@ -2,14 +2,16 @@ import Image from 'next/image'
 import Explainer from './components/Explainer'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
+import Onboard from './components/Onboard'
 
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col items-center  px-8  min-h-[300vh] overflow-hidden max-w-screen border-2 border-white">
+    <main id="ok" className="relative flex flex-col items-center  px-8  min-h-[300vh] overflow-hidden max-w-screen border-2 border-white">
       <Navbar />
       <Hero />
       <Explainer />
+      <Onboard />
       
       
       </main>
