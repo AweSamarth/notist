@@ -9,9 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Hero() {
 
   return (
-    <main className="h-screen border-2 relative border-red-500 w-full">
+    <main  className="h-screen  relative border-red-500 w-full">
       <motion.div
-        className="border-2 border-white -left-48 bottom-12 absolute rounded-full h-[253px] w-[253px] bg-[#1B2B54] "
+        className=" border-white -left-48 bottom-12 absolute rounded-full h-[253px] w-[253px] bg-[#1B2B54] "
         animate={{ y: [0, -25, 0], x:[0,5,0] }}
         initial={true}
         transition={{
