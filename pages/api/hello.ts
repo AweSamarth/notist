@@ -17,46 +17,7 @@ export default function handler(
   });
 
   const openai = new OpenAIApi(configuration);
-  
-  
-async function callWhisper() {
-  try {
-    const response = await axios.get("https://www.youtube.com/watch?v=tPEE9ZwTmy0", {
-      responseType: "arraybuffer",
-    });
-    console.log("heres the response")
-    console.log(response)
-    console.log("that waws the response")
-    const inputStream = arrayBufferToStream(response.data);
 
-    const resp = await openai.createTranslation(inputStream as any, "whisper-1");
-
-    res.status(200).json({ name: resp.data });
-  //  return resp.data
-
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-callWhisper();
-
-
-
-function arrayBufferToStream(buffer:Buffer) {
-  const readable = new Readable({
-    read() {
-      this.push(Buffer.from(buffer));
-      this.push(null);
-    },
-  });
-  return readable;
-}
-
-
-
-
-/*
   async function infogetter() {
     const videoUrl = "https://www.youtube.com/watch?v=tPEE9ZwTmy0";
     const videoId = ytdl.getURLVideoID(videoUrl);
@@ -69,9 +30,12 @@ function arrayBufferToStream(buffer:Buffer) {
 
     async function transcriber() {
       const fileBuffer = fs.readFileSync(`video.${container}`);
-      const buffer = Buffer.from(fileBuffer)
+      const buffer = Buffer.from(fileBuffer);
 
-      const transcript = await openai.createTranscription(fs.createReadStream(`video.${container}`) as any, "whisper-1");
+      const transcript = await openai.createTranscription(
+        fs.createReadStream(`video.${container}`) as any,
+        "whisper-1"
+      );
 
       return transcript.data.text;
     }
@@ -84,16 +48,24 @@ function arrayBufferToStream(buffer:Buffer) {
         console.log("finished transcribing");
 
         console.log(transcription);
+        const basePromptPrefix =
+          "The following is the transcript of a video. Make study notes using this transcript. Make sure these notes are properly arranged into paragraphs, have bullet points where needed, have headings, and are overall easy to understand. They should cover all the topics which are there in the transcript.";
+        const baseCompletion = await openai.createCompletion({
+          model:"text-davinci-003",
+          // prompt:`${basePromptPrefix}${transcription}`,
+          prompt:`${basePromptPrefix}${"so in this video we are going to be learning about how you can type really fast. First, get a good keyboard. Second, practise everyday. Third don't give up. Thanks a lot for watching"}`,
+          temperature:0.7,
+          max_tokens: 250,
 
-        res.status(200).json({ name: transcription });
-      })
+        })
+        const promptOutput = baseCompletion.data.choices.pop();
+
+        res.status(200).json({ output: promptOutput });
+      }
+      
+      )
       .on("error", (error) => console.error(error));
-  }
-
-  infogetter();
-  */
- 
-
-
-
+    }
+    
+    infogetter();
 }
