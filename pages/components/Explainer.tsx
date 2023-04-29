@@ -53,7 +53,8 @@ export default function Hero() {
       {/* animated shapes */}
       <div id="animatedshapes">
         <motion.div
-          className=" border-white -left-24 top-[24rem] absolute h-[132px] w-[132px] bg-[#303C5A] rounded-full opacity-50  "
+          id="topleft"
+          className=" border- border-2 -left-24 top-[27%] absolute h-[132px] w-[132px] bg-[#303C5A] rounded-full opacity-50  "
           animate={{ y: [0, -25, 0], x: [0, 5, 0] }}
           initial={true}
           transition={{
@@ -64,8 +65,8 @@ export default function Hero() {
         ></motion.div>
 
         <motion.div
-          id="right"
-          className=" overflow-x-hidden border-white  -right-16 top-28  absolute rounded-full h-[150px] w-[150px] opacity-40 bg-[#1B2B54] "
+          id="topright"
+          className=" overflow-x-hidden border-white border-2 -right-16 top-[35%]  absolute rounded-full h-[250px] w-[250px] opacity-20 bg-[#3b5596] "
           animate={{ y: [0, 100, 0], x: [0, -25, 25, 0] }}
           initial={true}
           transition={{
@@ -76,19 +77,19 @@ export default function Hero() {
         ></motion.div>
 
         <motion.div
-          id="right"
-          className=" overflow-x-hidden border-white  -right-16 top-[55%]  absolute rounded-full h-[150px] w-[150px] opacity-40 bg-[#1B2B54] "
-          animate={{ y: [0, 100, 50, 100, 25, 0], x: [0, -25, 25, 0] }}
+          id="midleft"
+          className=" overflow-x-hidden border-white border-2  -left-12 top-[56%]  absolute rounded-full h-[200px] w-[200px] opacity-20 bg-[#1B2B54] "
+          animate={{ y: [0, 100, 25, 0], x: [0, -25, 25, 0] }}
           initial={true}
           transition={{
-            duration: 11,
+            duration: 15,
             ease: "easeInOut",
             repeat: Infinity,
           }}
         ></motion.div>
         <motion.div
-          id="right"
-          className=" overflow-x-hidden border-white  -right-16 top-28  absolute rounded-full h-[150px] w-[150px] opacity-40 bg-[#1B2B54] "
+          id="midright"
+          className=" overflow-x-hidden border-red-500 border-2  -right-12 top-[69%]  absolute rounded-full h-[150px] w-[150px] opacity-20 bg-[#1B2B54] "
           animate={{ y: [0, 100, 0], x: [0, -25, 25, 0] }}
           initial={true}
           transition={{
@@ -98,8 +99,19 @@ export default function Hero() {
           }}
         ></motion.div>
         <motion.div
-          id="right"
-          className=" overflow-x-hidden border-white  -left-2 top-[35%]  absolute rounded-full h-[150px] w-[150px] opacity-40 bg-[#334c8c] "
+          id="bottomleft"
+          className=" overflow-x-hidden border-white border-2  -left-12 top-[85%]  absolute rounded-full h-[150px] w-[150px] opacity-20 bg-[#1f2843] "
+          animate={{ y: [0, 100, 0], x: [0, -25,2, 0] }}
+          initial={true}
+          transition={{
+            duration: 11,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+        ></motion.div>
+        {/* <motion.div
+          id="bottomright"
+          className=" overflow-x-hidden border-white  right-2 top-[85%]  absolute rounded-full h-[150px] w-[150px] opacity-20 bg-[#334c8c] "
           animate={{ y: [0, 34, 50, 78, 100, 0], x: [0, -25, 50, 90, 25, 0] }}
           initial={true}
           transition={{
@@ -107,32 +119,13 @@ export default function Hero() {
             ease: "easeInOut",
             repeat: Infinity,
           }}
-        ></motion.div>
-        <motion.div
-          id="right"
-          className=" overflow-x-hidden border-white  -left-2 top-[55%]  absolute rounded-full h-[150px] w-[150px] opacity-40 bg-[#334c8c] "
-          animate={{ y: [0, 34, 50, 78, 100, 0], x: [0, -25, 50, 90, 25, 0] }}
-          initial={true}
-          transition={{
-            duration: 11,
-            ease: "easeInOut",
-            repeat: Infinity,
-          }}
-        ></motion.div>
-        <motion.div
-          id="right"
-          className=" overflow-x-hidden border-white  top-[55%] right-9  absolute rounded-full h-[150px] w-[150px] opacity-40 bg-[#334c8c] "
-          animate={{ y: [0, 25, 2, 0], x: [0, 90, 25, 0] }}
-          initial={true}
-          transition={{
-            duration: 11,
-            ease: "easeInOut",
-            repeat: Infinity,
-          }}
-        ></motion.div>
+        ></motion.div> */}
+
       </div>
 
       {/* animated shapes over */}
+
+
 
       <motion.div
         layout
