@@ -38,8 +38,8 @@ export default function Navbar() {
     >
       
         <motion.div className=" border-red-500">
-          <div className="border- transition-all hover:cursor-pointer font-poppins text-[2.7rem]  font-[400] h-min  ">
-            Notist
+          <div onClick={()=>{window.scrollTo({top:0, behavior:"smooth"})}} className="border- transition-all hover:cursor-pointer font-poppins text-[2.7rem]  font-[400] h-min  ">
+            notist
           </div>
         </motion.div>
 

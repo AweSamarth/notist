@@ -4,6 +4,7 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +12,7 @@ export default function Onboard(props:any) {
 
   return (
     <main  className="  border-red-500 flex min-h-screen flex-col items-center w-full text-center justify-between">
-      <div className="flex  border-red-500 w-full h-4"></div>
+      <div className="flex  border-red-500 border- mb-8 w-full h-4"></div>
 
       <div className="flex flex-col  gap-2">
         <div className=" h-max p-2 flex font-inter font-extralight text-[3.5rem] leading-tight  border-red-500">
@@ -32,8 +33,8 @@ export default function Onboard(props:any) {
       <div className="flex justify-center mb-3  w-full">
       <motion.div
       className="z-30 h-[5.5rem] mt-4 mb-4 pr-16 px-10 bg-navbarBgColor w-[96%] flex justify-between items-center rounded-[10px] ">
-        <div className="font-inter font-light text-lg text-[#D7D7D7]  border-red-500">Made by Haardik, Divij and Samarth </div> 
-        <div className="text-3xl"><FontAwesomeIcon icon={faGithub} className="text-[#D7D7D7] hover:cursor-pointer transition-all hover:text-white" /> </div>
+        <div className="font-inter font-light text-lg text-[#D7D7D7]  border-red-500">Made by <Link href="https://github.com/haardikk21" className="hover:text-white transition-all" target="_blank" rel="noopener noreferrer"> Haardik</Link>,  <Link className="hover:text-white transition-all" href="https://github.com/dikapitacion" target="_blank" rel="noopener noreferrer">Divij</Link> and <Link className="transition-all hover:text-white " href="https://github.com/awesamarth" target="_blank" rel="noopener noreferrer">Samarth</Link> </div> 
+        <div className="text-3xl"><Link href="https://github.com/awesamarth/notist" target="_blank" rel="noreferrer noopener" ><FontAwesomeIcon icon={faGithub} className="text-[#D7D7D7] hover:cursor-pointer transition-all hover:text-white" /></Link></div>
 
       </motion.div>
       </div>
