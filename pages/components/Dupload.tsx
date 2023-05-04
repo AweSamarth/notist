@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-const tabs = []
+
 
 export default function Upload(){
     const [selectedBtn,setSelectedBtn] = useState(true)
@@ -23,7 +23,13 @@ export default function Upload(){
                 </div>
             </label>
             </div>
-            <button className='bg-[#2553C9] w-40 h-20 rounded m-auto my-2'>Generate</button>
+            <motion.button 
+                whileHover={{opacity:0.9}}
+                whileTap={{ scale: 0.8 }} 
+                className={`bg-[#2553C9] w-40 h-20 rounded m-auto my-2`}
+                >
+                Generate
+            </motion.button>
             <h2 className='italic text-3xl mx-auto my-7'>enjoy;)</h2>
             <div className="note bg-[#091228] w-max h-max overflow-auto">
             </div>
