@@ -52,14 +52,17 @@ export default function handler(
           "The following is the transcript of a video. Make study notes using this transcript. Make sure these notes are properly arranged into paragraphs, have bullet points where needed, have headings, and are overall easy to understand. They should cover all the topics which are there in the transcript.";
         const baseCompletion = await openai.createCompletion({
           model:"text-davinci-003",
-          // prompt:`${basePromptPrefix}${transcription}`,
-          prompt:`${basePromptPrefix}${"so in this video we are going to be learning about how you can type really fast. First, get a good keyboard. Second, practise everyday. Third don't give up. Thanks a lot for watching"}`,
+          prompt:`${basePromptPrefix}${transcription}`,
+          // prompt:`${basePromptPrefix}${"so in this video we are going to be learning about how you can type really fast. First, get a good keyboard. Second, practise everyday. Third don't give up. Thanks a lot for watching"}`,
           temperature:0.7,
           max_tokens: 250,
 
         })
         const promptOutput = baseCompletion.data.choices.pop();
-
+        fs.unlink(`video.${container}`, (err) => {
+          if (err) throw err;
+          console.log(`Deleted the file: video.${container}`);
+        })
         res.status(200).json({ output: promptOutput });
       }
       
