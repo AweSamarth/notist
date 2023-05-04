@@ -2,9 +2,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-
+const underline = 'absolute bottom-{-1px} left-0 right-0 h-{1px}'
 
 export default function Upload(){
+
     const [selectedBtn,setSelectedBtn] = useState(true)
     return(
         <>
@@ -15,8 +16,18 @@ export default function Upload(){
             </div>
             <div className="link w-1020px h-250px my-10 ">
             <label>
-            <motion.button className={` w-72 h-14 p-2 rounded yt ${selectedBtn?"bg-[#3a64d9]":"bg-[#162858]"}`} onClick={() => {setSelectedBtn(true)}}>YT </motion.button>
-            <motion.button className={` w-72 h-14 p-2 rounded yt ${!selectedBtn?"bg-[#3a64d9]":"bg-[#162858]"}`} onClick={() => {setSelectedBtn(false)}}>File </motion.button>
+            <motion.button className={` w-72 h-14 p-2 rounded yt ${selectedBtn?"bg-[#3a64d9] ":"bg-[#162858]"}`}
+             onClick={() => {setSelectedBtn(true)}}
+             >YT 
+             {selectedBtn?<motion.div
+              className={underline}
+              layoutId='underline'
+             >
+
+             </motion.div>:null}
+             </motion.button>
+            
+            <motion.button className={` w-72 h-14 p-2 rounded yt ${!selectedBtn?"bg-[#3a64d9] ":"bg-[#162858]"}`} onClick={() => {setSelectedBtn(false)}}>File </motion.button>
 
                 <div className='w-full bg-[#162858] flex flex-col items-center justify-center  mt-0'>
                 <input type="text" className='bg-[#0E0E0E] w-[920px] h-[55px] my-[75px] mx-[56px] rounded '/>
