@@ -15,12 +15,8 @@ export default function Upload(){
             </div>
             <div className="link w-1020px h-250px my-10 ">
             <label>
-            <motion.button className='bg-[#162858] w-72 h-14 p-2 rounded yt' onClick={() => setSelectedBtn(true)}>YT {selectedBtn? (
-                <motion.div className="underline" layoutId="underline" />
-              ) : null}</motion.button>
-            <motion.button className='bg-[#1C316A] w-72 h-14 p-2 rounded file' onClick={() => setSelectedBtn(false)}>File {!selectedBtn? (
-                <motion.div className="underline" layoutId="underline" />
-              ) : null}</motion.button>
+            <motion.button className={` w-72 h-14 p-2 rounded yt ${selectedBtn?"bg-[#3a64d9]":"bg-[#162858]"}`} onClick={() => {setSelectedBtn(true)}}>YT </motion.button>
+            <motion.button className={` w-72 h-14 p-2 rounded yt ${!selectedBtn?"bg-[#3a64d9]":"bg-[#162858]"}`} onClick={() => {setSelectedBtn(false)}}>File </motion.button>
 
                 <div className='w-full bg-[#162858] flex flex-col items-center justify-center  mt-0'>
                 <input type="text" className='bg-[#0E0E0E] w-[920px] h-[55px] my-[75px] mx-[56px] rounded '/>
