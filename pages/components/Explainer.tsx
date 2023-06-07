@@ -224,7 +224,7 @@ export default function Hero() {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 exit={{ y: -50, opacity: 0 }}
               >
-                <div className="px-4 flex justify-between">
+                <div className="px-4 my-64 flex justify-between">
                   <div className="flex flex-col  w-[60%]">
                     <div className=" font-inter text-5xl mb-6 font-extralight">
                       How it Works{" "}

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const underline = 'absolute bottom-{-1px} left-0 right-0 h-{1px}'
@@ -7,6 +7,10 @@ const underline = 'absolute bottom-{-1px} left-0 right-0 h-{1px}'
 export default function Upload(){
 
     const [selectedBtn,setSelectedBtn] = useState(true)
+    const [link,setLink] = useState("enter link")
+    const handleChange = (e: { target: { value: SetStateAction<string> } }) => {
+      setLink(e.target.value);
+    };
     return(
         <>
         <main className='min-h-screen flex flex-col items-center  bg-[ #1E1E1E] overflow-scrol'>
@@ -29,9 +33,11 @@ export default function Upload(){
             
             <motion.button className={` w-72 h-14 p-2 rounded yt ${!selectedBtn?"bg-[#3a64d9] ":"bg-[#162858]"}`} onClick={() => {setSelectedBtn(false)}}>File </motion.button>
 
-                <div className='w-full bg-[#162858] flex flex-col items-center justify-center  mt-0'>
-                <input type="text" className='bg-[#0E0E0E] w-[920px] h-[55px] my-[75px] mx-[56px] rounded '/>
-                </div>
+                <form className='w-full bg-[#162858] flex flex-col items-center justify-center  mt-0'>
+                  <label htmlFor="" className='flex flex-row items-center justify-center p-4'>
+                      Link:<input type="text" value={link} onChange={handleChange} className='bg-[#0E0E0E] w-[920px] h-14 my-[75px] mx-4 rounded p-4'/>
+                </label>
+                </form>
             </label>
             </div>
             <motion.button 
@@ -42,9 +48,11 @@ export default function Upload(){
                 Generate
             </motion.button>
             <h2 className='italic text-3xl mx-auto my-7'>enjoy;)</h2>
+            <p>{link}</p>
             <div className="note bg-[#091228] w-max h-max overflow-auto">
             </div>
         </main>
+
         <main>
         <AnimatePresence>
           <motion.button
